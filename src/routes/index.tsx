@@ -82,7 +82,7 @@ function Home() {
                 Contacto
               </Link>
               <a
-                href="https://cv-web-arturo-gtl2-p8n5l2u2a-arturourbina6161-2033s-projects.vercel.app/"
+                href="https://cv-web-arturo.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-12 items-center rounded-full hairline bg-primary/10 px-6 text-sm font-medium text-primary transition-colors hover:bg-primary/20 backdrop-blur"
