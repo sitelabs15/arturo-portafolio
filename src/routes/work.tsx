@@ -3,19 +3,21 @@ import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { categories, projects, type Category } from "@/data/projects";
 
+import { CompanyModal } from "@/components/CompanyModal";
+
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Work — Arturo Urbina" },
+      { title: "Trabajo — Arturo Urbina" },
       {
         name: "description",
         content:
-          "Selected projects by Arturo Urbina: image & logo design, video, 3D render builds and web projects.",
+          "Proyectos seleccionados de Arturo Urbina: diseño de imagen y logo, video, renders 3D y proyectos web.",
       },
-      { property: "og:title", content: "Work — Arturo Urbina" },
+      { property: "og:title", content: "Trabajo — Arturo Urbina" },
       {
         property: "og:description",
-        content: "Selected branding, video, 3D and web projects by Arturo Urbina.",
+        content: "Proyectos de branding, video, 3D y web seleccionados por Arturo Urbina.",
       },
       { property: "og:url", content: "/work" },
     ],
@@ -27,6 +29,7 @@ export const Route = createFileRoute("/work")({
 function WorkPage() {
   const [filter, setFilter] = useState<Category | "All">("All");
   const [year, setYear] = useState<"All" | number>("All");
+  const [selectedClient, setSelectedClient] = useState<string | null>(null);
 
   const years = useMemo(
     () => Array.from(new Set(projects.map((p) => p.year))).sort((a, b) => b - a),
@@ -43,17 +46,25 @@ function WorkPage() {
     [filter, year],
   );
 
+  const handleProjectClick = (p: typeof projects[0]) => {
+    setSelectedClient(p.client || p.title);
+  };
+
+  const modalProjects = selectedClient 
+    ? projects.filter(p => (p.client || p.title) === selectedClient)
+    : [];
+
   return (
-    <section className="mx-auto max-w-7xl px-6 pt-16 md:pt-24">
+    <section className="mx-auto max-w-7xl px-6 pt-16 md:pt-24 relative">
       <div className="max-w-3xl">
         <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-          Selected work
+          Trabajo seleccionado
         </p>
         <h1 className="mt-4 text-balance text-5xl font-semibold tracking-[-0.03em] md:text-6xl">
-          Brand, motion, 3D & the web.
+          Marca, motion, 3D & web.
         </h1>
         <p className="mt-5 text-lg text-muted-foreground">
-          A growing archive of design work across categories. Filter to dig in.
+          Un archivo en crecimiento de trabajo de diseño en varias categorías. Filtra para explorar.
         </p>
       </div>
 
@@ -76,7 +87,7 @@ function WorkPage() {
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-            Year
+            Año
           </span>
           <select
             value={year}
@@ -85,7 +96,7 @@ function WorkPage() {
             }
             className="rounded-full hairline bg-surface/60 px-3 py-2 text-sm text-foreground outline-none"
           >
-            <option value="All">All</option>
+            <option value="All">Todos</option>
             {years.map((y) => (
               <option key={y} value={y}>
                 {y}
@@ -97,14 +108,27 @@ function WorkPage() {
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((p, i) => (
-          <ProjectCard key={p.id} project={p} eager={i < 3} />
+          <ProjectCard 
+            key={p.id} 
+            project={p} 
+            eager={i < 3} 
+            onClick={() => handleProjectClick(p)}
+          />
         ))}
       </div>
 
       {filtered.length === 0 && (
         <p className="mt-16 text-center text-muted-foreground">
-          No projects match that filter yet.
+          Aún no hay proyectos que coincidan con este filtro.
         </p>
+      )}
+
+      {selectedClient && (
+        <CompanyModal
+          client={selectedClient}
+          projects={modalProjects}
+          onClose={() => setSelectedClient(null)}
+        />
       )}
     </section>
   );

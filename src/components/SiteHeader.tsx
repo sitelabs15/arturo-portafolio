@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
-  { to: "/", label: "Home" },
-  { to: "/work", label: "Work" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Inicio" },
+  { to: "/work", label: "Trabajo" },
+  { to: "/about", label: "Sobre mí" },
+  { to: "/contact", label: "Contacto" },
 ] as const;
 
 export function SiteHeader() {
@@ -59,11 +59,11 @@ export function SiteHeader() {
             to="/contact"
             className="hidden h-10 items-center rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground shadow-glow transition-all duration-200 ease-out-soft hover:opacity-90 md:inline-flex"
           >
-            Email me
+            Contáctame
           </Link>
           <button
             className="inline-flex h-10 w-10 items-center justify-center rounded-full hairline md:hidden"
-            aria-label="Open menu"
+            aria-label="Abrir menú"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -89,7 +89,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex h-11 items-center justify-center rounded-full bg-primary text-sm font-medium text-primary-foreground"
             >
-              Email me
+              Contáctame
             </Link>
           </div>
         </div>

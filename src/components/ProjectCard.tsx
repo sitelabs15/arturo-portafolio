@@ -2,13 +2,17 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/data/projects";
 
-export function ProjectCard({ project, eager = false }: { project: Project; eager?: boolean }) {
-  return (
-    <Link
-      to="/work/$id"
-      params={{ id: project.id }}
-      className="group relative block overflow-hidden rounded-2xl hairline bg-surface shadow-soft transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-glow"
-    >
+export function ProjectCard({ 
+  project, 
+  eager = false,
+  onClick 
+}: { 
+  project: Project; 
+  eager?: boolean;
+  onClick?: () => void;
+}) {
+  const content = (
+    <>
       <div className="relative aspect-[4/5] overflow-hidden bg-surface-2">
         <img
           src={project.cover}
@@ -30,6 +34,27 @@ export function ProjectCard({ project, eager = false }: { project: Project; eage
         </div>
         <span className="shrink-0 text-xs text-muted-foreground">{project.year}</span>
       </div>
+    </>
+  );
+
+  if (onClick) {
+    return (
+      <button 
+        onClick={onClick} 
+        className="text-left group relative block overflow-hidden rounded-2xl hairline bg-surface shadow-soft transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-glow w-full"
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <Link
+      to="/work/$id"
+      params={{ id: project.id }}
+      className="group relative block overflow-hidden rounded-2xl hairline bg-surface shadow-soft transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-glow"
+    >
+      {content}
     </Link>
   );
 }

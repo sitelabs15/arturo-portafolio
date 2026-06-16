@@ -5,16 +5,16 @@ import { Instagram, Mail, MessageCircle, Linkedin, ArrowUpRight, Check } from "l
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Arturo Urbina" },
+      { title: "Contacto — Arturo Urbina" },
       {
         name: "description",
         content:
-          "Get in touch with Arturo Urbina for branding, video, 3D or web projects. Fast reply within 24–48h.",
+          "Ponte en contacto con Arturo Urbina para proyectos de branding, video, 3D o web. Respuesta rápida dentro de 24–48h.",
       },
-      { property: "og:title", content: "Contact — Arturo Urbina" },
+      { property: "og:title", content: "Contacto — Arturo Urbina" },
       {
         property: "og:description",
-        content: "Get in touch with Arturo Urbina. Fast reply within 24–48h.",
+        content: "Ponte en contacto con Arturo Urbina. Respuesta rápida dentro de 24–48h.",
       },
       { property: "og:url", content: "/contact" },
     ],
@@ -69,14 +69,13 @@ function ContactPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 pt-16 md:pt-24">
       <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-        Contact
+        Contacto
       </p>
       <h1 className="mt-4 text-balance text-5xl font-semibold tracking-[-0.03em] md:text-6xl">
-        Let's start something.
+        Empecemos algo.
       </h1>
       <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-        Drop a line about your brand, video, 3D or web project. Fast reply within
-        24–48h.
+        Escríbeme sobre tu proyecto de marca, video, 3D o web. Respuesta rápida dentro de 24–48h.
       </p>
 
       <div className="mt-14 grid gap-6 md:grid-cols-2">
@@ -109,19 +108,19 @@ function ContactPage() {
         className="mt-16 grid gap-5 rounded-3xl hairline bg-surface/60 p-8 backdrop-blur md:p-10"
       >
         <div className="grid gap-5 md:grid-cols-2">
-          <Field label="Name" name="name" required placeholder="Your name" />
-          <Field label="Email" name="email" type="email" required placeholder="you@email.com" />
+          <Field label="Nombre" name="name" required placeholder="Tu nombre" />
+          <Field label="Correo" name="email" type="email" required placeholder="tu@correo.com" />
         </div>
         <Field
-          label="Message"
+          label="Mensaje"
           name="message"
           required
-          placeholder="Tell me about the project, timeline and goals…"
+          placeholder="Cuéntame sobre el proyecto, cronograma y objetivos…"
           textarea
         />
         <div className="flex items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            By submitting you'll open your email client.
+            Al enviar, se abrirá tu cliente de correo.
           </p>
           <button
             type="submit"
@@ -129,11 +128,11 @@ function ContactPage() {
             className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-6 text-sm font-medium text-primary-foreground shadow-glow transition-opacity disabled:opacity-60"
           >
             {state === "success" ? (
-              <><Check className="h-4 w-4" /> Sent</>
+              <><Check className="h-4 w-4" /> Enviado</>
             ) : state === "loading" ? (
-              "Opening email…"
+              "Abriendo correo…"
             ) : (
-              "Send message"
+              "Enviar mensaje"
             )}
           </button>
         </div>

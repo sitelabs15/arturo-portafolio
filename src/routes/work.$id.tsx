@@ -10,8 +10,8 @@ export const Route = createFileRoute("/work/$id")({
   },
   head: ({ loaderData }) => {
     const p = loaderData?.project;
-    const title = p ? `${p.title} — Arturo Urbina` : "Project — Arturo Urbina";
-    const desc = p?.overview ?? "Project case study by Arturo Urbina.";
+    const title = p ? `${p.title} — Arturo Urbina` : "Proyecto — Arturo Urbina";
+    const desc = p?.overview ?? "Caso de estudio de proyecto por Arturo Urbina.";
     return {
       meta: [
         { title },
@@ -26,9 +26,9 @@ export const Route = createFileRoute("/work/$id")({
   },
   notFoundComponent: () => (
     <div className="mx-auto max-w-3xl px-6 py-32 text-center">
-      <h1 className="text-3xl font-semibold">Project not found</h1>
+      <h1 className="text-3xl font-semibold">Proyecto no encontrado</h1>
       <Link to="/work" className="mt-6 inline-flex text-primary hover:underline">
-        ← Back to work
+        ← Volver a trabajos
       </Link>
     </div>
   ),
@@ -44,7 +44,7 @@ function ProjectDetail() {
         to="/work"
         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="h-4 w-4" /> All work
+        <ArrowLeft className="h-4 w-4" /> Todos los trabajos
       </Link>
 
       <header className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
@@ -67,13 +67,13 @@ function ProjectDetail() {
           </div>
         </div>
         <dl className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm md:text-right">
-          <dt className="text-muted-foreground">Date</dt>
+          <dt className="text-muted-foreground">Fecha</dt>
           <dd>{project.date}</dd>
-          <dt className="text-muted-foreground">Role</dt>
+          <dt className="text-muted-foreground">Rol</dt>
           <dd>{project.role}</dd>
           {project.client && (
             <>
-              <dt className="text-muted-foreground">Client</dt>
+              <dt className="text-muted-foreground">Cliente</dt>
               <dd>{project.client}</dd>
             </>
           )}
@@ -109,8 +109,8 @@ function ProjectDetail() {
 
       {/* Sections */}
       <div className="mt-16 grid gap-12 md:grid-cols-3">
-        <Section label="Overview"><p>{project.overview}</p></Section>
-        <Section label="Scope">
+        <Section label="Visión general"><p>{project.overview}</p></Section>
+        <Section label="Alcance">
           <ul className="space-y-2">
             {project.scope.map((s) => (
               <li key={s} className="flex gap-2">
@@ -120,7 +120,7 @@ function ProjectDetail() {
             ))}
           </ul>
         </Section>
-        <Section label="Deliverables">
+        <Section label="Entregables">
           <ul className="space-y-2">
             {project.deliverables.map((s) => (
               <li key={s} className="flex gap-2">
@@ -135,10 +135,10 @@ function ProjectDetail() {
       {/* CTA */}
       <section className="mt-24 overflow-hidden rounded-3xl hairline bg-surface/60 p-10 text-center backdrop-blur md:p-16">
         <h2 className="text-balance text-3xl font-semibold tracking-tight md:text-5xl">
-          Let's work together.
+          Trabajemos juntos.
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-          Branding, video, 3D or web — happy to chat. Fast reply within 24–48h.
+          Branding, video, 3D o web — encantado de hablar. Respuesta rápida dentro de 24–48h.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a

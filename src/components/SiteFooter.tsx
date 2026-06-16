@@ -7,34 +7,34 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-3">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            Let's build
+            Construyamos
           </p>
           <h3 className="mt-3 text-3xl font-semibold tracking-tight text-balance">
-            Have a project in mind?
+            ¿Tienes un proyecto en mente?
           </h3>
           <Link
             to="/contact"
             className="mt-6 inline-flex h-11 items-center rounded-full bg-foreground px-6 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
-            Start a project
+            Iniciar un proyecto
           </Link>
         </div>
 
         <div className="grid grid-cols-2 gap-6 text-sm md:col-span-2 md:grid-cols-3">
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Sitemap
+              Mapa del sitio
             </p>
             <ul className="space-y-2">
-              <li><Link to="/" className="hover:text-primary">Home</Link></li>
-              <li><Link to="/work" className="hover:text-primary">Work</Link></li>
-              <li><Link to="/about" className="hover:text-primary">About</Link></li>
-              <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
+              <li><Link to="/" className="hover:text-primary">Inicio</Link></li>
+              <li><Link to="/work" className="hover:text-primary">Trabajo</Link></li>
+              <li><Link to="/about" className="hover:text-primary">Sobre mí</Link></li>
+              <li><Link to="/contact" className="hover:text-primary">Contacto</Link></li>
             </ul>
           </div>
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Contact
+              Contacto
             </p>
             <ul className="space-y-2">
               <li>
@@ -56,10 +56,10 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Based in
+              Basado en
             </p>
-            <p className="text-foreground">Puebla, Mexico</p>
-            <p className="mt-1 text-muted-foreground">Available worldwide</p>
+            <p className="text-foreground">Puebla, México</p>
+            <p className="mt-1 text-muted-foreground">Disponible en todo el mundo</p>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@ export function SiteFooter() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="inline-flex items-center gap-2 hover:text-foreground"
           >
-            Back to top <ArrowUp className="h-3.5 w-3.5" />
+            Volver arriba <ArrowUp className="h-3.5 w-3.5" />
           </button>
         </div>
       </div>
