@@ -1,1 +1,0 @@
-import{j as o,L as t}from"./index-02-96ERf.js";const n=()=>o.jsxs("div",{className:"mx-auto max-w-3xl px-6 py-32 text-center",children:[o.jsx("h1",{className:"text-3xl font-semibold",children:"Project not found"}),o.jsx(t,{to:"/work",className:"mt-6 inline-flex text-primary hover:underline",children:"← Back to work"})]});export{n as notFoundComponent};
