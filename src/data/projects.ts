@@ -58,8 +58,24 @@ const gacMotorsImages = getImages('Render GAC MOTORS');
 const sitelabsImages = getImages('Sitelabs');
 const sitelabsWebImages = getImages('Sitelabs Web');
 const reylimImages = getImages('Reylim');
+const luminaLearningImages = getImages('Lumina Learning');
 
 export const projects: Project[] = [
+  {
+    id: "lumina-learning",
+    title: "Lumina Learning",
+    client: "Lumina Learning",
+    category: "Image & Logo",
+    date: "2024",
+    year: 2024,
+    tags: ["Branding", "Identidad Visual"],
+    cover: getCover(luminaLearningImages),
+    gallery: luminaLearningImages,
+    overview: "Desarrollo de identidad visual, manual de marca y aplicaciones gráficas para Lumina Learning.",
+    scope: ["Branding", "Diseño Gráfico"],
+    deliverables: ["Logos", "Presentación", "Flyers"],
+    role: "Diseñador Gráfico",
+  },
   {
     id: "bela-home-reels",
     title: "Béla Home — TikTok / Reels",
