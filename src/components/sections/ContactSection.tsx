@@ -16,7 +16,10 @@ export function ContactSection() {
           subtitle="Cuéntame qué necesitas y exploremos cómo convertirlo en una solución visual o digital adaptada a tu negocio."
         />
 
-        <div data-reveal className="rounded-3xl hairline bg-surface/70 p-6 sm:p-8 md:p-10 backdrop-blur-md space-y-8">
+        <div
+          data-reveal
+          className="rounded-3xl hairline bg-surface/70 p-6 sm:p-8 md:p-10 backdrop-blur-md space-y-8"
+        >
           <div className="max-w-2xl">
             <h3 className="text-xl font-bold tracking-tight text-foreground">
               Canales de comunicación directa
@@ -100,7 +103,10 @@ export function ContactSection() {
           </div>
 
           {/* Direct call banner */}
-          <div data-reveal className="flex flex-col items-center justify-between gap-4 rounded-2xl hairline bg-gradient-to-r from-primary/10 via-surface-2/40 to-cyan/10 p-5 sm:flex-row">
+          <div
+            data-reveal
+            className="flex flex-col items-center justify-between gap-4 rounded-2xl hairline bg-gradient-to-r from-primary/10 via-surface-2/40 to-cyan/10 p-5 sm:flex-row"
+          >
             <div className="text-center sm:text-left">
               <p className="text-sm font-bold text-foreground">¿Prefieres hablar directamente?</p>
               <p className="mt-0.5 text-xs text-muted-foreground">

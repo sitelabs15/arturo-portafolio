@@ -90,7 +90,10 @@ export function RecommendationsSection() {
           ))}
         </div>
 
-        <div data-reveal className="mt-8 flex flex-col items-center justify-between gap-3 rounded-2xl hairline bg-surface/40 px-5 py-4 text-center sm:flex-row sm:text-left">
+        <div
+          data-reveal
+          className="mt-8 flex flex-col items-center justify-between gap-3 rounded-2xl hairline bg-surface/40 px-5 py-4 text-center sm:flex-row sm:text-left"
+        >
           <p className="text-[11px] leading-relaxed text-muted-foreground">
             Los documentos originales firmados se encuentran disponibles en el archivo PDF para su
             consulta y validación.
