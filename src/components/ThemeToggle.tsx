@@ -6,9 +6,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const stored = (typeof window !== "undefined" && localStorage.getItem("theme")) as
-      | "dark"
-      | "light"
-      | null;
+      "dark" | "light" | null;
     const initial = stored ?? "dark";
     setTheme(initial);
     document.documentElement.classList.toggle("dark", initial === "dark");

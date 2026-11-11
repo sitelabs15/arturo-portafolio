@@ -2,12 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/data/projects";
 
-export function ProjectCard({ 
-  project, 
+export function ProjectCard({
+  project,
   eager = false,
-  onClick 
-}: { 
-  project: Project; 
+  onClick,
+}: {
+  project: Project;
   eager?: boolean;
   onClick?: () => void;
 }) {
@@ -39,8 +39,8 @@ export function ProjectCard({
 
   if (onClick) {
     return (
-      <button 
-        onClick={onClick} 
+      <button
+        onClick={onClick}
         className="text-left group relative block overflow-hidden rounded-2xl hairline bg-surface shadow-soft transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-glow w-full"
       >
         {content}

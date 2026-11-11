@@ -24,16 +24,11 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-out-soft ${
-        scrolled
-          ? "border-b border-hairline bg-background/70 backdrop-blur-xl"
-          : "bg-transparent"
+        scrolled ? "border-b border-hairline bg-background/70 backdrop-blur-xl" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link
-          to="/"
-          className="group flex items-center gap-2 text-sm font-semibold tracking-tight"
-        >
+        <Link to="/" className="group flex items-center gap-2 text-sm font-semibold tracking-tight">
           <span className="inline-block h-2 w-2 rounded-full bg-primary shadow-glow transition-transform duration-300 group-hover:scale-125" />
           Arturo Urbina
         </Link>

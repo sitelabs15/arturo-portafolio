@@ -1,25 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { projects } from "@/data/projects";
-
-const BASE_URL = "";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const entries = [
-          { path: "/", priority: "1.0" },
-          { path: "/work", priority: "0.9" },
-          { path: "/about", priority: "0.7" },
-          { path: "/contact", priority: "0.7" },
-          ...projects.map((p) => ({ path: `/work/${p.id}`, priority: "0.6" })),
-        ];
+        const entries = [{ path: "/", priority: "1.0" }];
 
         const urls = entries
           .map(
             (e) =>
-              `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <priority>${e.priority}</priority>\n  </url>`,
+              `  <url>\n    <loc>${e.path}</loc>\n    <priority>${e.priority}</priority>\n  </url>`,
           )
           .join("\n");
 
